@@ -9,6 +9,7 @@ class Tblstudents extends Model
 {
     protected $table = 'tblstudents';
     use HasFactory;
+    public $timestamps = false;
     protected $fillable = [
         'registrationNumber',
         'studentName',
@@ -20,4 +21,5 @@ class Tblstudents extends Model
         'isActive',
         'isDeskAssign',
     ];
+
 }

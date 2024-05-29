@@ -23,7 +23,7 @@ class TbladminController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/admin/dashboard');
         }else{
             return redirect('/admin/login')
             ->withInput($request->only(['username', 'password']));

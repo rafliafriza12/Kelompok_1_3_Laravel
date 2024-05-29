@@ -50,7 +50,7 @@
                     <i class="fa fa-users float-right"></i>
                     <h6 class="text-muted text-uppercase m-b-20">Total Registered Students</h6>
                     <h2 class="m-b-20"><span data-plugin="counterup">{{$registered}}</span></h2>
-                    <a href="manage-students.php"><span class="badge badge-danger"> View Detail </span></a>
+                    <a href="/admin/manage-student"><span class="badge badge-danger"> View Detail </span></a>
                 </div>
             </div>
         </div>

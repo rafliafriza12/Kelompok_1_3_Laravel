@@ -9,6 +9,7 @@ class Tbldeskhistory extends Model
 {
     protected $table = 'tbldeskhistory';
     use HasFactory;
+    
      protected $fillable = [
         'stduentId',
         'deaskId',

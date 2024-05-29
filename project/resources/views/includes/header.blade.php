@@ -53,7 +53,7 @@
                                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
                             </a>
 
-                            <a href="logout.php" class="dropdown-item notify-item">
+                            <a href="/logout" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-power"></i> <span>Logout</span>
                             </a>
 
