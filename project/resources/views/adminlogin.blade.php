@@ -42,14 +42,14 @@
                         <div class="form-group row">
                             <div class="col-12">
                                 <input type="text" class="form-control" placeholder="enter your username"
-                                    required="true" name="UserName" value="{{ old('UserName') }}">
+                                    required="true" name="username" value="{{ old('username') }}">
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-12">
                                 <input type="password" class="form-control" placeholder="enter your password"
-                                    name="Password" required="true" value="{{ old('Password') }}">
+                                    name="password" required="true" value="{{ old('password') }}">
                             </div>
                         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class TbladminController extends Controller
@@ -11,11 +12,12 @@ class TbladminController extends Controller
         return view('adminlogin');
     }
 
-    public function authenticate(Request $request){
+    public function authenticate(Request $request): RedirectResponse
+    {
         
        $credentials = $request->validate([
-            'UserName' => ['required'],
-            'Password' => ['required'],
+            'username' => ['required'],
+            'password' => ['required'],
         ]);
 
 
@@ -24,8 +26,19 @@ class TbladminController extends Controller
             return redirect('/');
         }else{
             return redirect('/admin/login')
-            ->withInput($request->only(['UserName', 'Password']));
+            ->withInput($request->only(['username', 'password']));
         }
 
+    }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/admin/login');
     }
 }

@@ -17,7 +17,8 @@
             <div class="sidebar-heading border-bottom bg-light" style="font-size:30px;">SSCMS</div>
             <div class="list-group list-group-flush">
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="index.php">Home</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/admin/login">Admin</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3"
+                    href="/admin/login">Admin</a>
             </div>
         </div>
         <!-- Page content wrapper-->
@@ -58,29 +59,34 @@
                     </thead>
                     <tbody>
                         @foreach ($desks as $desk)
-                        <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td>{{$desk->deskNumber}}</td>
-                            <td>
-                                @if ($desk->laptopChargerScoket == '')
-                                    <span style='color:red'>Not Available</span>
-                                @else
-                                    <span style='color:green'>Available</span>
-                                @endif
-                            </td>
-                            <td>
-                                @if ($desk->isOccupied=='')
-                                    <span style='color:green'>Available</span>
-                                @else
-                                <span style='color:red'>Occupied</span>
-                                @endif
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $desk->deskNumber }}</td>
+                                <td>
+                                    @if ($desk->laptopChargerScoket == '')
+                                        <span style='color:red'>Not Available</span>
+                                    @else
+                                        <span style='color:green'>Available</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($desk->isOccupied == '')
+                                        <span style='color:green'>Available</span>
+                                    @else
+                                        <span style='color:red'>Occupied</span>
+                                    @endif
+                                </td>
+                            </tr>
                         @endforeach
                 </table>
 
             </div>
         </div>
+        {{-- @if (auth()->user())
+            <a href="/logout">
+                <button>Sign Out</button>
+            </a>
+        @endif --}}
     </div>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

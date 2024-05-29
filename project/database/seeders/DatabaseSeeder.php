@@ -16,12 +16,12 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'AdminName' => 'admin',
-            'UserName' => 'admin',
+            'name' => 'admin',
+            'username' => 'admin',
             'MobileNumber' => 5689784592,
             'Address' => 'H-911, Vihar Soraj Nagar New Delhi-110011',
-            'Email' => 'admin@gmail.com',
-            'Password' => bcrypt('Test@123'),
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('Test@123'),
         ]);
     }
 }

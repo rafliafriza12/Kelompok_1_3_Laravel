@@ -11,18 +11,48 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Schema::create('tbladmin', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('AdminName');
+        //     $table->string('UserName');
+        //     $table->bigInteger('MobileNumber');
+        //     $table->string('Address');
+        //     $table->string('Email')->unique();
+        //     $table->string('Password');
+        //     $table->timestamp('AdminRegDate')->nullable();
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        // });
+
         Schema::create('tbladmin', function (Blueprint $table) {
             $table->id();
-            $table->string('AdminName');
-            $table->string('UserName');
-            $table->bigInteger('MobileNumber');
+            $table->string('name')->unique();
+            $table->string('username')->unique();
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->string('Address');
-            $table->string('Email')->unique();
-            $table->string('Password');
+            $table->bigInteger('MobileNumber');
             $table->timestamp('AdminRegDate')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('password_reset_tokens', function (Blueprint $table) {
+            $table->string('email')->primary();
+            $table->string('token');
+            $table->timestamp('created_at')->nullable();
+        });
+
+        Schema::create('sessions', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->foreignId('user_id')->nullable()->index();
+            $table->string('ip_address', 45)->nullable();
+            $table->text('user_agent')->nullable();
+            $table->longText('payload');
+            $table->integer('last_activity')->index();
+        });
+
         Schema::create('tbldesk', function (Blueprint $table) {
             $table->id();
             $table->string('deskNumber');
@@ -54,20 +84,6 @@ return new class extends Migration
             $table->char('isDeskAssign');
         });
 
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
-
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
-        });
     }
 
     /**
