@@ -7,5 +7,7 @@ use App\Http\Controllers\TbladminController;
 Route::get('/', [TbldeskController::class, 'index']);
 Route::get('/admin/login', [TbladminController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/admin/login/auth', [TbladminController::class, 'authenticate']);
+Route::get('/admin/dashboard', [TbldeskController::class, 'dashboard']);
+Route::get('/admin/manage', [TbldeskController::class, 'manage']);
 
 

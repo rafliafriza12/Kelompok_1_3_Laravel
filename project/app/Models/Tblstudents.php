@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tblstudents extends Model
 {
+    protected $table = 'tblstudents';
     use HasFactory;
     protected $fillable = [
         'registrationNumber',

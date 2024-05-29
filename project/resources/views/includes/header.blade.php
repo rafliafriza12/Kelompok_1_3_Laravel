@@ -34,12 +34,13 @@
                     <li class="list-inline-item dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                             href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                            <img src="{{asset(url('assets/images/users/avatar-1.jpg'))}}" alt="user" class="rounded-circle">
                         </a>
+
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                             <!-- item--> 
                             <div class="dropdown-item noti-title">
-                                <h5 class="text-overflow"><small>Welcome ! {{auth()->user()->AdminName}}</small> </h5>
+                                <h5 class="text-overflow"><small>Welcome ! {{'admin'}}</small> </h5>
                             </div>
 
                             <!-- item-->
@@ -75,7 +76,7 @@
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li>
-                        <a href="dashboard.php"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                        <a href="/admin/dashboard"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
                     </li>
 
                     <!---Desks---->
@@ -84,8 +85,8 @@
                         <ul class="submenu megamenu">
                             <li>
                                 <ul>
-                                    <li><a href="add-desk.php">Add </a></li>
-                                    <li><a href="manage-desks.php">Manage </a></li>
+                                    <li><a href="#">Add </a></li>
+                                    <li><a href="/admin/manage">Manage </a></li>
                                 </ul>
                             </li>
 
@@ -98,17 +99,17 @@
                         <ul class="submenu megamenu">
                             <li>
                                 <ul>
-                                    <li><a href="add-student.php">Add </a></li>
-                                    <li><a href="manage-students.php">Manage </a></li>
+                                    <li><a href="#">Add </a></li>
+                                    <li><a href="#">Manage </a></li>
                                 </ul>
                             </li>
 
                         </ul>
                     </li>
-                    <li> <a href="student-list.php"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
+                    <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
                         </a></li>
 
-                    <li> <a href="report.php"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
+                    <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
 
 
 
