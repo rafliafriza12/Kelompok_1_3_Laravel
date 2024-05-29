@@ -55,6 +55,38 @@ class TbldeskController extends Controller
         
     }
 
+    public function createDeskPage(){
+        return view('adddesk');
+    }
+
+    public function createDesk(Request $request){
+        $request->validate([
+            'deskNumber' => 'required|unique:tbldesk,deskNumber',
+        ]);
+        
+        try {
+            $agreeTerms = $request->input('laptopchargersocket',false);
+            if($agreeTerms == false){
+                Tbldesk::create([
+                    'deskNumber' => $request->deskNumber,
+                    'laptopChargerScoket' => '',
+                    'isOccupied' => '',
+                    ''
+                ]);
+            }
+            if($agreeTerms == "Yes"){
+                Tbldesk::create([
+                    'deskNumber' => $request->deskNumber,
+                    'laptopChargerScoket' => 'Yes',
+                    'isOccupied' => '',
+                ]);
+            }
+            return redirect('/admin/manage');
+        } catch (\Throwable $th) {
+            return redirect('/admin/add-desk');
+        }
+    }
+
     public function deleteDesk($id){
         Tbldesk::destroy($id);
         return redirect('/admin/manage');

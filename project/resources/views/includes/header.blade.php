@@ -85,7 +85,7 @@
                         <ul class="submenu megamenu">
                             <li>
                                 <ul>
-                                    <li><a href="#">Add </a></li>
+                                    <li><a href="/admin/add-desk">Add </a></li>
                                     <li><a href="/admin/manage">Manage </a></li>
                                 </ul>
                             </li>
@@ -100,7 +100,7 @@
                             <li>
                                 <ul>
                                     <li><a href="#">Add </a></li>
-                                    <li><a href="#">Manage </a></li>
+                                    <li><a href="/admin/manage-student">Manage </a></li>
                                 </ul>
                             </li>
 
