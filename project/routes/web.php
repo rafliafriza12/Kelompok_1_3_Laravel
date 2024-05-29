@@ -18,3 +18,4 @@ Route::post('/submit-edit-student/{studentId}', [StudentController::class, 'edit
 Route::get('/admin/manage-student', [StudentController::class, 'index'])->middleware('auth');
 Route::get('/admin/student-detail/{studentId}', [StudentController::class, 'detailStudent'])->middleware('auth');
 Route::get('/logout', [TbladminController::class, 'logout'])->middleware('auth')->name('logout')->middleware('auth');
+
