@@ -53,7 +53,7 @@
                                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
                             </a>
 
-                            <a href="logout.php" class="dropdown-item notify-item">
+                            <a href="/logout" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-power"></i> <span>Logout</span>
                             </a>
 
@@ -109,7 +109,7 @@
                     <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
                         </a></li>
 
-                    <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
+                    <li> <a href="/admin/report"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
 
 
 

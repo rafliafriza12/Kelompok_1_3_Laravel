@@ -45,10 +45,13 @@
                                         @endif
                                     </td>
                                     <td>{{$desk->postingDate}}</td>
-                                    <td><a href="" class="btn btn-primary">Edit </a> |
-                                        <a href=""
-                                            onclick=""
-                                            class="btn btn-danger btn-xs">Delete</a>
+                                    <td class=" flex gap-2"><a href="/admin/desk/{{$desk->id}}" class="btn btn-primary">Edit </a> 
+                                        <form action="/admin/desk/delete/{{$desk->id}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="btn btn-danger btn-xs">Delete</button>
+                                        </form>
                                     </td>
     
                                 </tr>
