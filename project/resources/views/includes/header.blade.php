@@ -109,7 +109,7 @@
                     <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
                         </a></li>
 
-                    <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
+                    <li> <a href="/admin/report"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
 
 
 

@@ -26,4 +26,37 @@ class TbldeskController extends Controller
         $desks = Tbldesk::all();
         return view('managedesk', compact('desks'));
     }
+
+    public function editDeskPage($id){
+        $row = Tbldesk::where('id',$id)->first();
+        return view('editdesk', compact('row'));
+    }
+
+    public function editDesk(Request $request, $id){
+        $request->validate([
+            'desknumber' => 'required',
+        ]);
+
+        try {
+            $agreeTerms = $request->input('laptopchargersocket',false);
+            $desk = Tbldesk::where('id',$id)->first();
+            $desk->deskNumber = $request->desknumber;
+            if($agreeTerms == false){
+                $desk->laptopChargerScoket = '';
+            }
+            if($agreeTerms == null){
+                $desk->laptopChargerScoket ='Yes';
+            }
+            $desk->save();
+            return redirect('/admin/manage');
+        } catch (\Throwable $th) {
+            return redirect('/admin/desk/'.$id);
+        }
+        
+    }
+
+    public function deleteDesk($id){
+        Tbldesk::destroy($id);
+        return redirect('/admin/manage');
+    }
 }
