@@ -58,7 +58,8 @@ return new class extends Migration
             $table->string('deskNumber');
             $table->string('laptopChargerScoket');
             $table->char('isOccupied');
-            $table->timestamp('postingDate');
+            $table->timestamp('postingDate')->nullable();
+            $table->timestamps();
         });
 
         Schema::create('tbldeskhistory', function (Blueprint $table) {
@@ -66,9 +67,10 @@ return new class extends Migration
             $table->integer('stduentId');
             $table->integer('deaskId');
             $table->mediumText('assignRemark')->collation('utf8mb4_general_ci');
-            $table->timestamp('assignDate');
+            $table->timestamp('assignDate')->nullable();
             $table->timestamp('unassignDate')->nullable();
-            $table->mediumText('unassignedRemark')->collation('utf8mb4_general_ci');
+            $table->mediumText('unassignedRemark')->collation('utf8mb4_general_ci')->nullable();
+            $table->timestamps();
         });
         
         Schema::create('tblstudents', function (Blueprint $table) {
@@ -79,9 +81,10 @@ return new class extends Migration
             $table->string('studentEmailId');
             $table->string('studentQualification');
             $table->mediumText('studentAddress')->collation('utf8mb4_general_ci');
-            $table->timestamp('regDate');
-            $table->integer('isActive');
-            $table->char('isDeskAssign');
+            $table->timestamp('regDate')->nullable();
+            $table->integer('isActive')->default(1);
+            $table->integer('isDeskAssign')->default(0);
+            $table->timestamps();
         });
 
     }
