@@ -26,6 +26,8 @@ Route::put('/admin/desk/edit/{id}', [TbldeskController::class, 'editDesk'])->mid
 Route::get('/admin/desk/{id}', [TbldeskController::class, 'editDeskPage'])->middleware('auth');
 Route::get('/admin/dashboard', [TbldeskController::class, 'dashboard']);
 Route::get('/admin/manage', [TbldeskController::class, 'manage']);
+Route::get('/admin/add-desk', [TbldeskController::class, 'createDeskPage'])->middleware('auth');
+Route::post('/admin/add-desk/create', [TbldeskController::class, 'createDesk'])->middleware('auth');
 Route::get('/logout', [TbladminController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('/admin/report', [ReportController::class, 'index'])->middleware('auth');
 Route::post('/admin/report/list', [ReportController::class, 'reportList'])->middleware('auth');
