@@ -84,7 +84,7 @@ Each project follows the MVC pattern with the following directory structure:
 - T Farhansyah ( 22081070100 )
 - Muhammad Mahathir ( 2208107010056 )
 - T.M Fadlul Ihsan ( 22081070100 )
-- Indriani Miza Alfiyanti ( 22081070100 )
+- Indriani Miza Alfiyanti ( 2208107010026 )
 - Nurfitriyana Sajim (  )
 
 ## License
