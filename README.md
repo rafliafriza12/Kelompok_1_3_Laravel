@@ -81,7 +81,7 @@ Each project follows the MVC pattern with the following directory structure:
 - Athar Rayyan Muhammad ( 2208107010074 )
 - Farhanul Khair ( 2208107010076 )
 - Alfi Zamriza ( 2208107010080 )
-- T Farhansyah ( 22081070100 )
+- T Farhan Syah ( 2208107010090 )
 - Muhammad Mahathir ( 2208107010056 )
 - T.M Fadlul Ihsan ( 22081070100 )
 - Indriani Miza Alfiyanti ( 2208107010026 )
