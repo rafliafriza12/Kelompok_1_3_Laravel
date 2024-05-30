@@ -86,6 +86,7 @@ Each project follows the MVC pattern with the following directory structure:
 - T.M Fadlul Ihsan ( 22081070100 )
 - Indriani Miza Alfiyanti ( 2208107010026 )
 - Nurfitriyana Sajim (  )
+- Saif Syahsyah Hizbullah ()
 
 ## License
 
