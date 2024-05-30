@@ -98,12 +98,10 @@
                         <a href="#"><i class="zmdi zmdi-collection-text"></i> <span> Students </span> </a>
                         <ul class="submenu megamenu">
                             <li>
-                                <ul>
-<<<<<<< HEAD
+                                <ul
                                     <li><a href="/admin/create-student">Add </a></li>
-=======
                                     <li><a href="#">Add </a></li>
->>>>>>> 4935eb5010809a12582e5d033f957e3b6b79ef72
+
                                     <li><a href="/admin/manage-student">Manage </a></li>
                                 </ul>
                             </li>
@@ -114,9 +112,6 @@
                         </a></li>
 
                     <li> <a href="/admin/report"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
-
-
-
 
 
                 </ul>
