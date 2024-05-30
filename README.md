@@ -11,46 +11,35 @@ This repository contains a Laravel project named "Student Study Center Managemen
 - Basic knowledge of PHP, MySQL, and Laravel.
 - Composer (Dependency Management Tool).
 
-### Installation
+# Implementation Steps
 
-1. *Download and Install XAMPP:*
+## Installation
+```bash
+git clone [github link]
+cd Kelompok_1_3_laravel/project
+cp .env.example .env
+composer install
+npm install
+php artisan migrate
+php artisan db:seed
+php artisan serve
+npm run dev
+```
 
-   - Download XAMPP from the [official website](https://www.apachefriends.org/index.html).
-   - Install XAMPP and start the Apache and MySQL modules from the XAMPP Control Panel.
+## Database Migration
+1. Create a database named `sscmsdb`.
+2. Adjust the database name in the `.env` file.
+3. Execute the following commands:
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+   ```
+4. Import the `sscmsdb.sql` file in phpMyAdmin.
 
-2. *Clone the Repository:*
-
-   - Clone this repository to your local machine or download the ZIP file and extract it.
-
-3. *Install Composer:*
-
-   - Download and install Composer from [here](https://getcomposer.org/download/).
-
-4. *Install Laravel Dependencies:*
-
-   - Open a terminal and navigate to the project directory.
-   - Run the following command to install all necessary dependencies:
-     bash
-     composer install
-     
-
-5. *Set Up Environment Configuration:*
-
-   - Duplicate the .env.example file and rename it to .env.
-   - Update the .env file with your database configuration and other environment variables.
-
-6. *Generate Application Key:*
-
-   - Run the following command to generate a new application key:
-     bash
-     php artisan key:generate
-     
-
-7. *Import the Database:*
-
-   - Open phpMyAdmin by navigating to [http://localhost/phpmyadmin/](http://localhost/phpmyadmin/).
-   - Create a new database named studycenterdb.
-   - Import the SQL file provided in the project directory (studycenterdb.sql).
+## Deployment
+```bash
+php artisan serve
+```
 
 ### Running the Project
 
