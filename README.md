@@ -15,7 +15,7 @@ This repository contains a Laravel project named "Student Study Center Managemen
 
 ## Installation
 ```bash
-git clone [github link]
+git clone https://github.com/rafliafriza12/Kelompok_1_3_Laravel.git
 cd Kelompok_1_3_laravel/project
 cp .env.example .env
 composer install
