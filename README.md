@@ -88,7 +88,7 @@ Each project follows the MVC pattern with the following directory structure:
 
 - Rafli Afriza Nugraha ( 2208107010028 )
 - Glenn Hakim ( 2208107010072 )
-- Ganang Setyo Hadi ( 22081070100 )
+- Ganang Setyo Hadi ( 2208107010052 )
 - Athar Rayyan Muhammad ( 2208107010074 )
 - Farhanul Khair ( 22081070100 )
 - Alfi Zamriza ( 22081070100 )
@@ -97,7 +97,6 @@ Each project follows the MVC pattern with the following directory structure:
 - T.M Fadlul Ihsan ( 22081070100 )
 - Indriani Miza Alfiyanti ( 22081070100 )
 - Nurfitriyana Sajim (  )
-- 
 
 ## License
 
