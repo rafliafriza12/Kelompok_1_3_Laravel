@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManageAssignController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TbldeskController;
@@ -12,6 +13,8 @@ Route::get('/admin/login', [TbladminController::class, 'index'])->name('login')-
 Route::post('/admin/login/auth', [TbladminController::class, 'authenticate']);
 Route::get('/admin/dashboard', [TbldeskController::class, 'dashboard'])->middleware('auth');
 Route::get('/admin/manage', [TbldeskController::class, 'manage'])->middleware('auth');
+Route::post('/create-student', [StudentController::class, 'createStudentSubmit'])->middleware('auth');
+Route::get('/admin/create-student', [StudentController::class, 'createStudent'])->middleware('auth');
 Route::get('/edit-student/{studentId}', [StudentController::class, 'edit'])->middleware('auth');
 Route::get('/delete-student/{studentId}', [StudentController::class, 'delete'])->middleware('auth');
 Route::post('/submit-edit-student/{studentId}', [StudentController::class, 'editsubmit'])->middleware('auth');
@@ -26,6 +29,10 @@ Route::get('/admin/manage', [TbldeskController::class, 'manage']);
 Route::get('/logout', [TbladminController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('/admin/report', [ReportController::class, 'index'])->middleware('auth');
 Route::post('/admin/report/list', [ReportController::class, 'reportList'])->middleware('auth');
+Route::post('/unassign/{studentId}', [StudentController::class, 'unassign'])->middleware('auth');
+Route::post('/assign/{studentId}', [StudentController::class, 'assign'])->middleware('auth');
+Route::get('/admin/assign-unassign', [ManageAssignController::class, 'index'])->middleware('auth');
+
 
 
 

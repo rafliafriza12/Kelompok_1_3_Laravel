@@ -17,10 +17,11 @@ class ReportController extends Controller
         $first = true;
         $fdate = Carbon::parse($request->fromdate);
         $tdate = Carbon::parse($request->todate);
-        $results = DB::table('tblstudents')
-            ->leftJoin('tbldeskhistory', 'tbldeskhistory.stduentId', '=', 'tblstudents.id')
-            ->whereBetween(DB::raw('DATE(assignDate)'), [$fdate, $tdate])
-            ->select('tblstudents.*', 'tbldeskhistory.*')
+        $results = DB::table('tbldeskhistory')
+            ->join('tblstudents', 'tbldeskhistory.stduentId', '=', 'tblstudents.id')
+            ->join('tbldesk', 'tbldeskhistory.deaskId', '=', 'tbldesk.id')
+            ->select('tbldeskhistory.*', 'tblstudents.*', 'tbldesk.deskNumber')
+            ->whereBetween('tbldeskhistory.created_at', [$fdate, $tdate])
             ->get();
         return view('report', compact('first','fdate','tdate', 'results'));
     }

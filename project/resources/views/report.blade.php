@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h3> B/w Dates Report Assign Desk</h3>
+                        <h3 class="mb-4 font-bold"> B/w Dates Report Assign Desk</h3>
                         <hr />
 
                         <div class="card-body card-block">
@@ -46,7 +46,7 @@
                             </form>
                         </div>
                         @if ($first)
-                        <h5 align="center">Assign Desk Report from <?php echo $fdate; ?> to <?php echo $tdate; ?></h5>
+                        <h5 align="center" class="mb-4 font-semibold">Assign Desk Report from <?php echo $fdate; ?> to <?php echo $tdate; ?></h5>
                         <hr />
 
 
@@ -77,16 +77,14 @@
                                     <td>{{$row->studentEmailId}}</td>
                                     <td>{{$row->studentQualification}}</td>
                                     <td>
-                                    @if ($row->isDeskAssign == '1')
+                                    @if ($row->unassignDate == null)
                                         Assigned
                                     @else
                                         Not Assigned
                                     @endif
                                     </td>
                                     <td>{{$row->regDate}}</td>
-                                    <td><a href="#" class="btn btn-primary"
-                                            target="_blank">Assign/UnAssign Desk</a></td>
-
+                                    <td><a href="/admin/student-detail/{{$row->id}}" class="btn btn-primary">Assign/UnAssign Desk</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

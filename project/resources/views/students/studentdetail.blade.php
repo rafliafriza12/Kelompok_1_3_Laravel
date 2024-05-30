@@ -11,36 +11,32 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-
-                        @foreach ($studentDetail as $row)
-                            <h3 class="m-t-0 header-title"> Student Details of #{{ $row->registrationNumber }}</h3>
-
-
+                            <h3 class="m-t-0 header-title mb-4 font-bold"> Student Details of #{{ $studentDetail->registrationNumber }}</h3>
                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <tbody>
                                     <tr>
                                         <th>Reg No</th>
-                                        <td>{{ $row->registrationNumber }}</td>
+                                        <td>{{ $studentDetail->registrationNumber }}</td>
                                         <th>Name</th>
-                                        <td>{{ $row->studentName }}</td>
+                                        <td>{{ $studentDetail->studentName }}</td>
                                     </tr>
 
                                     <tr>
                                         <th>Contact No</th>
-                                        <td>{{ $row->studentContactNo }}</td>
+                                        <td>{{ $studentDetail->studentContactNo }}</td>
                                         <th>Email Id</th>
-                                        <td>{{ $row->studentEmailId }}</td>
+                                        <td>{{ $studentDetail->studentEmailId }}</td>
                                     </tr>
                                     <tr>
                                         <th>Qualification</th>
-                                        <td>{{ $row->studentQualification }}</td>
+                                        <td>{{ $studentDetail->studentQualification }}</td>
                                         <th>Address</th>
-                                        <td>{{ $row->studentAddress }}</td>
+                                        <td>{{ $studentDetail->studentAddress }}</td>
                                     </tr>
                                     <tr>
                                         <th>Reg Date</th>
-                                        <td colspan="3">{{ $row->regDate }}</td>
+                                        <td colspan="3">{{ $studentDetail->regDate }}</td>
                                     </tr>
 
 
@@ -48,9 +44,8 @@
 
                                 </tbody>
                             </table>
-                        @endforeach
-                        @if ($deskHistories->isEmpty())
-                            <p>No history found for the given student ID.</p>
+                        @if ($deskHistories->count() == 0)
+                            <p class="mt-4 mb-4 font-bold">No history found for the given student ID.</p>
                         @else
                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -80,7 +75,7 @@
                             </table>
                         @endif
 
-                        @if ($deskstatus == '1')
+                        @if ($studentDetail->isDeskAssign == 1)
                             <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
                                 data-target="#unAssign">Unassign Desk</button>
                         @else
@@ -101,7 +96,7 @@
 
 
     <!--Assign Modal --->
-    <form method="post" action="/create-desk">
+    <form method="post" action="/assign/{{$studentDetail->id}}">
         @csrf
         <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
@@ -112,16 +107,15 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <h5 class="font-16">Desk No</h5>
+                        <h5 class="font-16 my-2">Desk No</h5>
                         <p><select class="form-control" name="deskno" required>
-
                                 <option value="">Select</option>
                                 @foreach ($availableDesks as $row)
                                     <option value="{{$row->id}}">{{$row->deskNumber}}</option>
                                 @endforeach
                             </select>
                         </p>
-                        <h5 class="font-16">Remark </h5>
+                        <h5 class="font-16 mb-2 mt-4">Remark </h5>
                         <p>
                             <textarea class="form-control" placeholder="Remark" required="true" name="remark" required></textarea>
                         </p>
@@ -139,27 +133,17 @@
 
 
     <!---unassign Modal--->
-    <form method="post">
+    <form method="post" action="/unassign/{{$studentDetail->id}}">
+        @csrf
         <div id="unAssign" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-
-
-                        <h5 class="modal-title" id="myModalLabel">unAssignssign Desk</h5>
+                        <h5 class="modal-title" id="myModalLabel">unAssign Desk</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                     </div>
                     <div class="modal-body">
-                        <?php
-$sql="SELECT * from tbldeskhistory where stduentId='$sid' order by id desc  limit 1";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-foreach($results as $row)
-{               ?>
-                        <input type="hidden" name="unassigndeskid" value="<?php echo $row->deaskId; ?>">
-                        <?php } ?>
                         </p>
                         <h5 class="font-16">Remark </h5>
                         <p>
