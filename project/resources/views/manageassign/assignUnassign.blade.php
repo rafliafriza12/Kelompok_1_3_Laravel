@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card-box">
-                        <h4 class="m-t-0 header-title mb-4 font-bold">Manage Student Details</h4>
+                        <h4 class="m-t-0 header-title mb-4 font-bold">Student Details</h4>
 
 
                         <table id="datatable" class="table table-bordered dt-responsive nowrap"
@@ -35,13 +35,9 @@
                                         <td>{{$row->studentEmailId}}</td>
                                         <td>{{$row->studentQualification}}</td>
                                         <td>{{$row->regDate}}</td>
-                                        <td><a href="/edit-student/{{$row->id}}"
-                                                class="btn btn-primary">Edit</a>
-                                            <a href="/delete-student/{{$row->id}}"
-                                                onclick="return confirm('Do you really want to Delete ?');"
-                                                class="btn btn-danger">Delete</a>
+                                        <td>
                                             <a href="/admin/student-detail/{{$row->id}}"
-                                                class="btn btn-primary">View Details</a>
+                                                class="btn btn-primary">Assign/Unassign Desk</a>
                                         </td>
                                     </tr>
                                 @endforeach

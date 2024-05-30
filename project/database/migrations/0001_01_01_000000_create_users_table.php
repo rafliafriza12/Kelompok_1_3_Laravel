@@ -69,7 +69,7 @@ return new class extends Migration
             $table->mediumText('assignRemark')->collation('utf8mb4_general_ci');
             $table->timestamp('assignDate')->nullable();
             $table->timestamp('unassignDate')->nullable();
-            $table->mediumText('unassignedRemark')->collation('utf8mb4_general_ci');
+            $table->mediumText('unassignedRemark')->collation('utf8mb4_general_ci')->nullable();
             $table->timestamps();
         });
         
@@ -82,8 +82,8 @@ return new class extends Migration
             $table->string('studentQualification');
             $table->mediumText('studentAddress')->collation('utf8mb4_general_ci');
             $table->timestamp('regDate')->nullable();
-            $table->integer('isActive');
-            $table->char('isDeskAssign');
+            $table->integer('isActive')->default(1);
+            $table->integer('isDeskAssign')->default(0);
             $table->timestamps();
         });
 

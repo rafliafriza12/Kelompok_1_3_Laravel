@@ -44,14 +44,14 @@
                             </div>
 
                             <!-- item-->
-                            <a href="profile.php" class="dropdown-item notify-item">
+                            {{-- <a href="profile.php" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-account-circle"></i> <span>Profile</span>
-                            </a>
+                            </a> --}}
 
                             <!-- item-->
-                            <a href="change-password.php" class="dropdown-item notify-item">
+                            {{-- <a href="change-password.php" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-settings"></i> <span>Settings</span>
-                            </a>
+                            </a> --}}
 
                             <a href="/logout" class="dropdown-item notify-item">
                                 <i class="zmdi zmdi-power"></i> <span>Logout</span>
@@ -98,21 +98,20 @@
                         <a href="#"><i class="zmdi zmdi-collection-text"></i> <span> Students </span> </a>
                         <ul class="submenu megamenu">
                             <li>
-                                <ul>
+                                <ul
+                                    <li><a href="/admin/create-student">Add </a></li>
                                     <li><a href="#">Add </a></li>
+
                                     <li><a href="/admin/manage-student">Manage </a></li>
                                 </ul>
                             </li>
 
                         </ul>
                     </li>
-                    <li> <a href="#"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
+                    <li> <a href="/admin/assign-unassign"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
                         </a></li>
 
                     <li> <a href="/admin/report"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
-
-
-
 
 
                 </ul>
