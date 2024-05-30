@@ -34,13 +34,14 @@
                     <li class="list-inline-item dropdown notification-list">
                         <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown"
                             href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{asset(url('assets/images/users/avatar-1.jpg'))}}" alt="user" class="rounded-circle">
+                            <img src="{{ asset(url('assets/images/users/avatar-1.jpg')) }}" alt="user"
+                                class="rounded-circle">
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
-                            <!-- item--> 
+                            <!-- item-->
                             <div class="dropdown-item noti-title">
-                                <h5 class="text-overflow"><small>Welcome ! {{'admin'}}</small> </h5>
+                                <h5 class="text-overflow"><small>Welcome ! {{ 'admin' }}</small> </h5>
                             </div>
 
                             <!-- item-->
@@ -76,7 +77,8 @@
                 <!-- Navigation Menu-->
                 <ul class="navigation-menu">
                     <li>
-                        <a href="/admin/dashboard"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span> </a>
+                        <a href="/admin/dashboard"><i class="zmdi zmdi-view-dashboard"></i> <span> Dashboard </span>
+                        </a>
                     </li>
 
                     <!---Desks---->
@@ -98,17 +100,16 @@
                         <a href="#"><i class="zmdi zmdi-collection-text"></i> <span> Students </span> </a>
                         <ul class="submenu megamenu">
                             <li>
-                                <ul
+                                <ul>
                                     <li><a href="/admin/create-student">Add </a></li>
-                                    <li><a href="#">Add </a></li>
-
                                     <li><a href="/admin/manage-student">Manage </a></li>
                                 </ul>
                             </li>
 
                         </ul>
                     </li>
-                    <li> <a href="/admin/assign-unassign"><i class="zmdi zmdi-collection-text"></i> Assigned / Unassigned Desk
+                    <li> <a href="/admin/assign-unassign"><i class="zmdi zmdi-collection-text"></i> Assigned /
+                            Unassigned Desk
                         </a></li>
 
                     <li> <a href="/admin/report"><i class="zmdi zmdi-collection-text"></i> Report </a></li>
